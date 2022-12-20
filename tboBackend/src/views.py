@@ -1,4 +1,7 @@
-import streamlit as slit
+from django.shortcuts import render
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+
 
 t_kalimat = [["K", "SPO"],
           ["K", "SPOpel"],
@@ -134,17 +137,7 @@ def cek_kalimat(strinx):
   progressing2(test, len(strinx))
   return cek_baku(test)
 
-
-slit.write("""# FINAL PROJECT""")
-original_title = '<p style="font-weight:bold; color:black; font-size: 32px;">Teori Bahasa dan Otomata</p>'
-slit.markdown(original_title, unsafe_allow_html=True)
-slit.write("""Parsing Bahasa Baku Bahasa Indonesia ~ **KELOMPOK 1**""")
-
-input = slit.text_input("Masukkan kalimat yang ingin dicek: ")
-cek = slit.button("Cek Kalimat")
-
-if cek:
-    if cek_kalimat(input) == 1:
-        slit.success("Kalimat baku")
-    else:
-        slit.error("Kalimat tidak baku")
+# Create your views here.
+@api_view(['POST'])
+def checkCykController(request):
+   return Response(cek_kalimat(request.data["query"]) == 1)
