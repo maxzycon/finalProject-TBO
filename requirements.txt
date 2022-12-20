@@ -1,7 +1,5 @@
 altgraph==0.17.3
 asgiref==3.6.0
-auto-py-to-exe==2.26.0
-backports.zoneinfo==0.2.1
 bottle==0.12.23
 bottle-websocket==0.2.9
 dj-database-url==1.2.0
