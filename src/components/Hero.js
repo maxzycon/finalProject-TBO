@@ -9,23 +9,18 @@ const Hero = () => {
   const checkInputAPI = () => {
     axios.postForm("https://finalproject-tbo-production.up.railway.app/api/check", {
       query:input
-    }, {
-      headers:{
-        'Content-Type': 'application/json'
-      },
-      withCredentials:false
     }).then((res) => {
       setResult(res.data.result)
+      if (res.data.result) {
+        alert(`Kalimat ${input} adalah kalimat baku`)
+      }else{
+        alert(`Kalimat ${input} adalah kalimat tidak baku`)
+      }
     })
   }
 
   const onChangeInput = (data) => {
     setInput(data.target.value);
-    if (data.target.value) {
-      alert(`Kalimat ${input} adalah kalimat baku`)
-    }else{
-      alert(`Kalimat ${input} adalah kalimat tidak baku`)
-    }
   }
 
   return (
