@@ -140,4 +140,4 @@ def cek_kalimat(strinx):
 # Create your views here.
 @api_view(['POST'])
 def checkCykController(request):
-   return Response(cek_kalimat(request.data["query"]) == 1)
+   return Response({"result":cek_kalimat(request.data["query"]) == 1})
