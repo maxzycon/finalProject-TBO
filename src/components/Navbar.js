@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="flex justify-between items-center w-full h-16 px-5 bg-darked shadow-lg font-abc max-w-[1240px] mx-auto">
+      <div className="flex justify-between items-center w-full h-16 px-5 shadow-lg font-abc max-w-[1240px] mx-auto">
         <div className="font-bold text-xl cursor-pointer flex items-center">
           <span className="mr-3 pt-2 text-whitening">
             <ion-icon name="desktop-outline"></ion-icon>
