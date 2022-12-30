@@ -1,5 +1,4 @@
 import React from 'react'
-import icon1 from '../Assets/man-head.svg'
 
 const Team = () => {
 
